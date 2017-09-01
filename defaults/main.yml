@@ -1,0 +1,19 @@
+---
+fabio_version: "1.5.2"
+filename: "fabio-{{ fabio_version }}-go1.8.3-linux_amd64"
+download_url: "https://github.com/fabiolb/fabio/releases/download/v{{ fabio_version }}/{{ filename }}"
+executable_location: "/usr/bin/fabio"
+config_dir: "/etc/fabio"
+
+fabio:
+  proxy:
+    addr: ":9999"
+  registry:
+    consul:
+      addr: "localhost:8500"
+      register:
+        enabled: true
+  metrics:
+    target: ""
+    statsd:
+      addr: ""

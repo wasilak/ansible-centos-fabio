@@ -1,0 +1,13 @@
+[Unit]
+Description=fabio
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+# ExecStartPre=/bin/sleep 10
+ExecStart=/usr/bin/fabio -cfg=/etc/fabio/fabio.properties
+ExecReload=/bin/kill -HUP
+
+[Install]
+WantedBy=multi-user.target
